@@ -56,7 +56,8 @@ export const BebidasProvider = ({ children }) => {
         bebidas,
         modal,
         handleModalClick,
-        handleIdBebida
+        handleIdBebida,
+        receta
       }}>
       { children }
     </BebidasContext.Provider>
