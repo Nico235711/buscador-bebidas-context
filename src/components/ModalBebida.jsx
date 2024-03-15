@@ -1,18 +1,28 @@
-import { Image, Modal } from "react-bootstrap"
+import { Button, Image, Modal } from "react-bootstrap"
 import { useBebidas } from "../hooks/useBebidas"
-
 
 const ModalBebida = () => {
 
-  const { modal, handleModalClick, receta, cargando } = useBebidas()
+  const {
+    modal,
+    handleModalClick,
+    receta,
+    cargando,
+    handleFavoritos
+  } = useBebidas()
 
-  const mostrarIngredientes = () => {  
+  const mostrarIngredientes = () => {
     let ingredientes = []
 
     for (let index = 1; index <= 15; index++) {
       if (receta[`strIngredient${index}`]) {
         ingredientes.push(
-          <li>{receta[`strIngredient${index}`]} {receta[`strMeasure${index}`]}</li>
+          <li
+            key={receta[`strIngredient${index}`]}
+          >
+            {receta[`strIngredient${index}`]}
+            {receta[`strMeasure${index}`]}
+          </li>
         )
       }
     }
